@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
+    TanStackRouterVite({ target: 'react', autoCodeSplitting: true }),
     react(),
     {
       name: 'typescript-plugin-css-modules',
@@ -12,12 +13,12 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'), // Алиас для удобных импортов
+      '@': path.resolve(__dirname, './src'),
     },
   },
   css: {
     modules: {
-      localsConvention: 'camelCase', // camelCase-имена классов в JS (опционально)
+      localsConvention: 'camelCase',
     },
   },
 });
