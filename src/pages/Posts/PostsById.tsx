@@ -1,8 +1,10 @@
-import PostsIdRoute from '@/routes/posts/$postId';
+import { getRouteApi } from '@tanstack/react-router';
 import { FC } from 'react';
 
+const route = getRouteApi('/posts/$postId');
+
 const PostsById: FC = () => {
-  const { postId } = PostsIdRoute.useParams();
+  const { postId } = route.useParams();
   return <div>Post {postId}</div>;
 };
 
