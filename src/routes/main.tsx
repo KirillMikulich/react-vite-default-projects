@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router';
-import ParentRoute from './__layout';
+import ParentRoute from './__root';
 import App from '@/pages/Main/App';
 
 const IndexRoute = createRoute({

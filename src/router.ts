@@ -1,9 +1,11 @@
-import ParentRoute from '@/routes/__layout';
+import ParentRoute from '@/routes/__root';
 import IndexRoute from '@/routes/main';
 import AboutRoute from './routes/about';
 import { createRouter } from '@tanstack/react-router';
+import PostsRoute from './routes/posts';
+import PostsIdRoute from './routes/posts/$postId';
 
-const routeTree = ParentRoute.addChildren([IndexRoute, AboutRoute]);
+const routeTree = ParentRoute.addChildren([IndexRoute, AboutRoute, PostsRoute, PostsIdRoute]);
 
 const router = createRouter({ routeTree });
 
